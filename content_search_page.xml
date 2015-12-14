@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SearchPage"
+    tools:showIn="@layout/activity_search_page">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="\n\n\nForecast Search"
+        android:textColor="#000000"
+        android:textSize="85px"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/searchtable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40px"
+        android:paddingTop="40px">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="320px"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="20px"
+                android:textSize="60px"
+                android:text="Street"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/street"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"
+                android:freezesText="true"
+                android:focusable="true"
+                android:windowSoftInputMode="stateUnchanged"
+                android:visibility="visible"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="320px"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="20px"
+                android:text="City"
+                android:textSize="60px"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"
+                android:text="" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="320px"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="20px"
+                android:text="State"
+                android:textSize="60px"
+                android:textColor="#000000" />
+
+            <Spinner
+                android:id="@+id/state_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="320px"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="20px"
+                android:text="Degree"
+                android:textSize="60px"
+                android:textColor="#000000" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/degree"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="15px"
+                android:checkedButton="@+id/radio_fahrenheit">
+
+                <RadioButton
+                    android:id="@+id/radio_fahrenheit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10px"
+                    android:text="Fahrenheit"
+                    android:textSize="50px"/>
+
+                <RadioButton
+                    android:id="@+id/radio_celsius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Celsius"
+                    android:textSize="50px"/>
+            </RadioGroup>
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/searchtable"
+        android:paddingLeft="105px"
+        android:paddingTop="20px"
+        android:paddingRight="10px">
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_height="fill_parent"
+            android:layout_width="300px"
+            android:text="Search"
+            android:textSize="60px"
+            android:layout_below="@id/searchtable"
+            android:paddingTop="0px"
+            android:layout_marginRight="90px"
+            android:background="@drawable/normalbuttons"/>
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_height="fill_parent"
+            android:layout_width="300px"
+            android:text="Clear"
+            android:textSize="60px"
+            android:layout_below="@id/searchtable"
+            android:paddingTop="0px"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/normalbuttons"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinearLayoutError"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/LinearLayout"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="45px">
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20px"
+            android:text=""
+            android:textColor="#000000"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/LinearLayoutError"
+        android:paddingLeft="75px"
+        android:gravity="bottom|right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="180px"
+        >
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="About"
+        />
+        </LinearLayout>
+        <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/LinearLayoutError"
+        android:gravity="bottom|right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:paddingBottom="100px"
+            android:paddingRight="45px"
+        >
+        <TextView
+            android:id="@+id/powered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Powered By:"
+            android:layout_gravity="right|center"
+            android:textColor="#000000" />
+        <ImageView
+            android:id="@+id/forecastLogo"
+            android:layout_width="350px"
+            android:layout_height="150px"
+            android:layout_below="@id/powered"
+            android:layout_gravity="right|bottom"
+            android:src="@drawable/forecast_logo" />
+    </LinearLayout>
+</RelativeLayout>
+
+
